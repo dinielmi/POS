@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,4 +28,10 @@ Route::prefix('product')->group(function() {
     Route::get('/category/beauty-health', [ProductController::class, 'beautyHealth'])->name('product.beauty-health');
     Route::get('/category/home-care', [ProductController::class, 'homeCare'])->name('product.home-care');
     Route::get('/category/baby-kid', [ProductController::class, 'babyKids'])->name('product.baby-kid');
+});
+
+Route::get('/user/{id}/name/{name}', [UserController::class, 'show']);
+
+Route::get('/sales', function(){
+    return view('transaction');
 });
