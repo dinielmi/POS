@@ -22,13 +22,6 @@ class UserModel extends Model
      * 
      * @var array
      */
-    
-     protected $fillable = [
-        'username',
-        'nama',
-        'password',
-        'level_id'
-    ];
 
     public function level() : BelongsTo{
         return $this->belongsTo(LevelModel::class, 'level_id', 'level_id');
