@@ -22,6 +22,10 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+Route::get('/', function () {
+    return view('welcome');
+})->name('home');
+
 Route::get('/', [HomepageController::class, 'index']);
 
 Route::prefix('product')->group(function() {
